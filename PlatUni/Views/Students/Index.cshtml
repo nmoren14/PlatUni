@@ -1,0 +1,43 @@
+﻿@model IEnumerable<PlatUni.Models.Student>
+
+<h2>Listado de Estudiantes</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo Estudiante</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo Electrónico</th>
+            <th>Materias Inscritas</th> 
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.FirstName</td>
+                <td>@student.LastName</td>
+                <td>@student.Email</td>
+                <td>
+                    @{
+                        // Obtener la cantidad de materias inscritas para el estudiante actual
+                        int enrolledCourseCount = ViewBag.EnrolledCourseCounts.ContainsKey(student.StudentId)
+                        ? ViewBag.EnrolledCourseCounts[student.StudentId]
+                        : 0;
+                    }
+                    @enrolledCourseCount
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.StudentId" class="btn btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@student.StudentId" class="btn btn-primary">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@student.StudentId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

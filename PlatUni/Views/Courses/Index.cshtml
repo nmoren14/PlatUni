@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PlatUni.Models.Course>
+
+<h2>Lista de Cursos</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo Curso</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre del Curso</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.CourseId</td>
+                <td>@course.CourseName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@course.CourseId" class="btn btn-primary">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@course.CourseId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

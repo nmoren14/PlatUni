@@ -1,0 +1,19 @@
+﻿@model PlatUni.Models.Course
+
+<h2>Eliminar Curso</h2>
+
+<div>
+    <h4>¿Estás seguro de que deseas eliminar este curso?</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.CourseId</dd>
+        <dt class="col-sm-2">Nombre del Curso:</dt>
+        <dd class="col-sm-10">@Model.CourseName</dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="CourseId" />
+        <button type="submit" class="btn btn-danger">Eliminar</button> |
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

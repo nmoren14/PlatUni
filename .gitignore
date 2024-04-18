@@ -1,0 +1,122 @@
+# Ignorar archivos de configuración del IDE
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignorar la carpeta de paquetes NuGet
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+!**/[Pp]ackages/Build/
+
+# Ignorar archivos de compilación y directorios
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Pp]roperties/
+
+# Ignorar archivos de la base de datos SQL Server
+*.mdf
+*.ldf
+
+# Ignorar archivos de configuración de publicación
+*.pubxml
+*.publishproj
+*.pubxml.user
+
+# Ignorar la carpeta de resultados de la cobertura de código
+[Tt]est[Rr]esult*/
+
+# Ignorar archivos temporales
+*.TMP
+*.temp
+*.tbd
+
+# Ignorar archivos de caché local
+csx/
+*.csx
+
+# Ignorar archivos generados por Visual Studio
+.vs/
+
+# Ignorar archivos de la caché del editor de Visual Studio Code
+.vscode/
+
+# Ignorar archivos de caché de Windows
+Thumbs.db
+ehthumbs.db
+
+# Ignorar archivos de imagen de disco
+*.ISO
+
+# Ignorar archivos de configuración del sistema
+*.swp
+*.*swp
+
+# Archivos de Resharper (si lo utilizas)
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# Carpetas de trabajo de NCrunch (si lo utilizas)
+_NCrunch_*
+.*crunch*.local.xml
+
+# Archivos de compilación de estilo antiguo
+*.pidb
+*.ncc
+
+# Otros archivos y directorios
+*.Annotate
+*.Cache
+ClientBin/
+[Ss]tyle[Cc]op.*
+~$*
+*~
+*.dbmdl
+
+# Archivos de configuración de despliegue de Azure
+*.cscfg
+
+# Archivos de paquetes y metadatos generados por Windows Store
+*.appx
+*.appxbundle
+*.appxupload
+*.appxsym
+*.appxrecipe
+*.msix
+*.msixbundle
+*.msixupload
+*.msixsym
+*.msixrecipe
+AppPackages/
+
+# Archivos de configuración de ClickOnce
+publish/
+
+# Archivos de salida de la herramienta de generación de perfiles de rendimiento de Visual Studio
+*.psess
+*.vsp
+*.vspx
+*.sap
+
+# Archivos pfx de certificados
+*.pfx
+*.cer
+
+# Archivos de credenciales
+*.rdp
+*.creds
+
+# Archivos batch de MSBuild
+*.targets
+
+# Archivos generados por la herramienta de migración EF
+*.edmx.sql
+
+# Archivos de backup
+*.bak
+*.bacpac
+
+# Archivos de configuración de Docker
+Dockerfile.*
+docker-compose.*

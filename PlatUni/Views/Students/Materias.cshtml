@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PlatUni.Models.Course>
+
+<h2>Materias Inscritas por el Estudiante</h2>
+
+@if (!Model.Any())
+{
+    <p>No se encontraron cursos inscritos para este estudiante.</p>
+}
+else
+{
+    <ul>
+        @foreach (var course in Model)
+        {
+            <li>
+                <strong>@course.CourseName</strong>
+                <ul>
+                    @foreach (var enrollment in course.Enrollments)
+                    {
+                        <li>@enrollment.Student.FirstName @enrollment.Student.LastName</li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+}

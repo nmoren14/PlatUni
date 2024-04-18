@@ -1,0 +1,34 @@
+﻿@model IEnumerable<PlatUni.Models.Professor>
+
+<h2>Listado de Profesores</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear Nuevo Profesor</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Primera Clase</th>
+            <th>Segunda Clase</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var professor in Model)
+        {
+            <tr>
+                <td>@professor.FirstName</td>
+                <td>@professor.LastName</td>
+                <td>@(professor.FisrtClassNavigation != null ? professor.FisrtClassNavigation.CourseName : "-")</td>
+                <td>@(professor.SecondClassNavigation != null ? professor.SecondClassNavigation.CourseName : "-")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@professor.ProfessorId" class="btn btn-primary">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@professor.ProfessorId" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+﻿@model PlatUni.Models.Professor
+
+<h2>Crear Nuevo Profesor</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label for="FirstName">Nombre:</label>
+        <input type="text" class="form-control" asp-for="FirstName" required />
+    </div>
+    <div class="form-group">
+        <label for="LastName">Apellido:</label>
+        <input type="text" class="form-control" asp-for="LastName" required />
+    </div>
+    <div class="form-group">
+        <label for="FisrtClass">Primera Clase:</label>
+        <select class="form-control" id="FisrtClass" asp-for="FisrtClass" asp-items="@ViewBag.Courses">
+            <option value="">Seleccione una clase</option>
+        </select>
+    </div>
+
+    <div class="form-group" style="margin-bottom: 5%;">
+        <label for="SecondClass">Segunda Clase:</label>
+        <select class="form-control" id="SecondClass" asp-for="SecondClass" asp-items="@ViewBag.Courses">
+            <option value="">Seleccione una clase</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#FisrtClass, #SecondClass').change(function () {
+                var firstClassValue = $('#FisrtClass').val();
+                var secondClassValue = $('#SecondClass').val();
+
+                // Habilitar todas las opciones en ambos dropdowns
+                $('#FisrtClass option, #SecondClass option').prop('disabled', false);
+
+                // Deshabilitar la opción seleccionada en el otro dropdown
+                if (firstClassValue) {
+                    $('#SecondClass option[value="' + firstClassValue + '"]').prop('disabled', true);
+                }
+                if (secondClassValue) {
+                    $('#FisrtClass option[value="' + secondClassValue + '"]').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+}
+

@@ -1,0 +1,11 @@
+﻿@model PlatUni.Models.Professor
+
+<h2>Eliminar Profesor</h2>
+
+<div>
+    <p>¿Está seguro de que desea eliminar al profesor <strong>@Model.FirstName @Model.LastName</strong>?</p>
+    <form asp-action="Delete" asp-route-id="@Model.ProfessorId" method="post">
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

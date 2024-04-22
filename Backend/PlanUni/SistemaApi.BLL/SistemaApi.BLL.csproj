@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaApi.DAL\SistemaApi.DAL.csproj" />
+    <ProjectReference Include="..\SistemaApi.DTO\SistemaApi.DTO.csproj" />
+    <ProjectReference Include="..\SistemaApi.Model\SistemaApi.Model.csproj" />
+    <ProjectReference Include="..\SistemaApi.Util\SistemaUni.Util.csproj" />
+  </ItemGroup>
+
+</Project>
